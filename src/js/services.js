@@ -1,9 +1,19 @@
-import angular from 'angular'
+// import angular from 'angular'
+//
+// angular.module('movieApp.services', []).factory('Movie', function ($resource) {
+//   return $resource('http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id', { id: '@_id' }, {
+//     update: {
+//       method: 'PUT'
+//     }
+//   })
+// })
 
-angular.module('movieApp.services', []).factory('Movie', function ($resource) {
+let MovieFactory = function ($resource) {
   return $resource('http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id', { id: '@_id' }, {
     update: {
       method: 'PUT'
     }
   })
-})
+}
+
+export default MovieFactory
