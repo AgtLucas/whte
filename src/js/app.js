@@ -3,9 +3,9 @@ import ngResource from 'angular-resource'
 import ngRouter from 'angular-ui-router'
 import MovieFactory from './services'
 
-angular.module('movieApp', [ngResource, ngRouter, 'movieApp.controllers', 'movieApp.services'])
+const theApp = angular.module('movieApp', [ngResource, ngRouter])
 
-angular.module('movieApp').config(function ($stateProvider) {
+theApp.config(function ($stateProvider) {
   $stateProvider.state('movies', {
     url: '/movies',
     templateUrl: 'src/partials/movies.html',
@@ -27,19 +27,11 @@ angular.module('movieApp').config(function ($stateProvider) {
   $state.go('movies')
 })
 
-// theApp.factory('Movie', function ($resource) {
-//   return $resource('http://movieapp-sitepointdemos.rhcloud.com/api/movies/:id', { id: '@_id' }, {
-//     update: {
-//       method: 'PUT'
-//     }
-//   })
-// })
-
 // Factory
-angular.module('movieApp.services', []).factory('Movie', MovieFactory)
+theApp.factory('Movie', MovieFactory)
 
 // Controllers
-angular.module('movieApp.controllers', [])
+theApp
   .controller('MovieListController', ['$scope', '$state', '$window', 'Movie', function ($scope, $state, $window, Movie) {
     $scope.movies = Movie.query()
 
