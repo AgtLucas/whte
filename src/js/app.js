@@ -36,11 +36,11 @@ theApp
     $scope.movies = Movie.query()
 
     $scope.deleteMovie = function (movie) {
-      // if (popupService.showPopup('Really delete this?')) {
+      if (window.confirm('Really delete this?')) {
         movie.$delete(function () {
           $window.location.href = ''
         })
-      // }
+      }
     }
   }])
   .controller('MovieViewController', ['$scope', '$stateParams', 'Movie', function ($scope, $stateParams, Movie) {
