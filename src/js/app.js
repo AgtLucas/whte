@@ -18,19 +18,19 @@ theApp.factory('Movie', MovieFactory)
 theApp.config(function ($stateProvider) {
   $stateProvider.state('movies', {
     url: '/movies',
-    templateUrl: 'partials/movies.html',
+    templateUrl: 'src/partials/movies.html',
     controller: 'MovieListController'
   }).state('viewMovie', {
     url: '/movies/:id/view',
-    templateUrl: 'partials/movie-view.html',
+    templateUrl: 'src/partials/movie-view.html',
     controller: 'MovieViewController'
   }).state('newMovie', {
     url: '/movies/new',
-    templateUrl: 'partials/movie-add.html',
+    templateUrl: 'src/partials/movie-add.html',
     controller: 'MovieCreateController'
   }).state('editMovie', {
     url: '/movies/:id/edit',
-    templateUrl: 'partials/movie-edit.html',
+    templateUrl: 'src/partials/movie-edit.html',
     controller: 'MovieEditController'
   })
 }).run(function ($state) {
