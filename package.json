@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AgtLucas/angular-api/issues"
   },
-  "homepage": "https://github.com/AgtLucas/angular-api#readme"
+  "homepage": "https://github.com/AgtLucas/angular-api#readme",
+  "dependencies": {
+    "angular": "^1.4.9"
+  }
 }
